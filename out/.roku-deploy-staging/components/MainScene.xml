@@ -1,0 +1,16 @@
+<component name="MainScene" extends="Scene">
+    <interface>
+        <function name="showMovieDetails" />
+        <function name="videoPlay" />
+        <function name="regulateDialogVisibility" />
+    </interface>
+    <script type="text/brightscript" uri="pkg:/components/MainScene.brs" />
+    <script type="text/brightscript" uri="pkg:/components/ServiceComponent.brs" />
+    <children>        
+        <LeftSideScreen id="leftSideScreen" translation="[0, 0]" visible="false" />
+        <RightSideScreen id="rightSideScreen" visible="false" />
+        <VideoComponent id="videoComponent" visible="false" translation="[0, 0]" />
+    </children>
+</component>
+
+
