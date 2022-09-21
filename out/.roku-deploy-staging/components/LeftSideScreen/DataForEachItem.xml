@@ -1,6 +1,0 @@
-<component name="DataForEachItem" extends="ContentNode">
-    <interface>
-        <field id="posterUrl" type="string" />
-        <field id="parentalRating" type="string" />
-    </interface>
-</component>
