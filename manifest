@@ -11,3 +11,5 @@ splash_screen_sd=pkg:/images/splash_sd.jpg
 splash_color=#121212
 ui_resolutions=fhd
 splash_rsg_optimization=1
+sdk_instant_resume=1
+run_as_process=1
