@@ -6,10 +6,12 @@
     </interface>
     <script type="text/brightscript" uri="pkg:/components/MainScene.brs" />
     <script type="text/brightscript" uri="pkg:/components/ServiceComponent.brs" />
-    <children>        
+    <children>
+        <SearchBar id="SearchBar" translation="[0, 0]" />
         <LeftSideScreen id="leftSideScreen" translation="[0, 0]" visible="false" />
         <RightSideScreen id="rightSideScreen" visible="false" />
         <VideoComponent id="videoComponent" visible="false" translation="[0, 0]" />
+        <KeybordComponent id="KeybordComponent" />
     </children>
 </component>
 

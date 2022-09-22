@@ -1,0 +1,9 @@
+<component name="KeybordComponent" extends="Group">
+    <interface>
+        <function name="setFocusKeybord" />
+    </interface>
+    <script type="text/brightscript" uri="KeybordComponent.brs" />
+    <children>
+        <DynamicMiniKeyboard id="searchKeyboard" visible="false" translation="[1000,140]" />
+    </children>
+</component>
