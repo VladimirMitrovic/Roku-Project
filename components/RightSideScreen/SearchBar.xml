@@ -1,0 +1,13 @@
+<component name="SearchBar" extends="Group">
+    <interface>
+        <function name="setFocusSearch" />
+        <function name="resetSearchbarText" />
+    </interface>
+    <script type="text/brightscript" uri="SearchBar.brs" />
+    <children>
+        <!-- <Rectangle id="searchRect" translation="[50, 40]" width="400" height="50" color="0xFFFFFFFF">
+            <Label id="searchLabel"  color="0x000000" height="30" translation="[40, 10]" vertAlign = "center" horizAlign="right"/>
+        </Rectangle> -->
+         <TextEditBox id="searchTextBox" width="500" fontSize="30" hintText="Search..." textColor = "0xDDDDDDDD" translation="[950, 40]" />
+    </children>
+</component>

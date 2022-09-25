@@ -4,6 +4,7 @@
     </interface>
     <script type="text/brightscript" uri="KeybordComponent.brs" />
     <children>
-        <DynamicMiniKeyboard id="searchKeyboard" visible="false" translation="[1000,140]" />
+        <!-- <MiniKeyboard id="searchKeyboard" visible="false" translation="[950,140]" showTextEditBox="false" width="500" /> -->
+        <MiniKeyboard id="searchKeyboard" visible="false" translation="[950,140]" />
     </children>
 </component>

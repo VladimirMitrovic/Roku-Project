@@ -44,4 +44,3 @@ function prepareNode(obj)
     end if
     return node
 end function
-

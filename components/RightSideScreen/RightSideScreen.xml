@@ -4,6 +4,6 @@
     </interface>
     <script type="text/brightscript" uri="RightSideScreen.brs" />
     <children>
-        <DetailsAboutMovie id="movieDetails" translation="[900,0]" />
+        <DetailsAboutMovie id="movieDetails" translation="[900,140]" />
     </children>
 </component>

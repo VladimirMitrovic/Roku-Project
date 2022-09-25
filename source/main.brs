@@ -1,8 +1,8 @@
-sub Main()
+sub Main(args as Object)   
     showChannelSGScreen()
 end sub
 
-sub showChannelSGScreen()
+sub showChannelSGScreen() 
 
     screen = CreateObject("roSGScreen")
     m.port = CreateObject("roMessagePort")

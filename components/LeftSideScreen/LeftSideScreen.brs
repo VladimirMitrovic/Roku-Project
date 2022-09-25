@@ -10,7 +10,7 @@ function init()
     m.backgroundPoster.height = 1080
     m.backgroundPoster.translation = [0,0]
     m.markupGridContent.visible = true
-    m.lastFocusedRow = 0
+    ' m.lastFocusedRow = 0
     m.markupGridContent.observeField("itemFocused", "onItemFocused")
     m.markupGridContent.observeField("itemSelected", "onItemSelected")
 end function
@@ -22,21 +22,27 @@ end function
 function onItemFocused() as void
     if m.markupGridContent.content = invalid then return
 
-    ' print "Vert dir: "m.markupGridContent.vertFocusDirection
-    ' print "focus row "m.markupGridContent.currFocusRow
+    ' print "markupGridContent: "m.markupGridContent.content
+    ' print m.markupGridContent
     ' print "onItemFocused #####"
     
-    if m.lastFocusedRow = 0 and m.markupGridContent.vertFocusDirection = "up" then
-        m.markupGridContent.jumpToItem = 0
-        m.global.SearchComponent.callFunc("setFocusSearch")
-    else
+    ' numColumns: 3
+
+    ' currFocusColumn: 0
+    
+    currFocusColumn = m.markupGridContent.currFocusColumn + 1
+
+    ' if m.markupGridContent.numColumns = m.markupGridContent.currFocusColumn and m.markupGridContent.vertFocusDirection = "right" then
+    '     m.markupGridContent.jumpToItem = 0
+    '     m.global.SearchComponent.callFunc("setFocusSearch")
+    ' else
         itemInFocused = m.markupGridContent.itemFocused
         focusChild = m.markupGridContent.content.getChild(itemInFocused)
         m.top.getParent().callFunc("showMovieDetails",focusChild)
         m.backgroundPoster.uri = focusChild.HDBackgroundImageUrl
         m.backgroundPoster.failedBitmapUri = "pkg:/images/hollow.jpg"
-    end if
-    m.lastFocusedRow = m.markupGridContent.currFocusRow
+    ' end if
+    ' m.lastFocusedRow = m.markupGridContent.currFocusRow
 end function
 
 function onItemSelected() as void
@@ -44,6 +50,7 @@ function onItemSelected() as void
 end function
 
 function onKeyEvent(key as String, press as Boolean) as Boolean
+    ' print "onKeyEvent #####"
     if key = "back" and press then
         itemInFocused = m.markupGridContent.itemFocused
         if itemInFocused = 0 then
@@ -66,8 +73,9 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
             m.markupGridContent.jumpToItem = 0
             
         end if
-    else if key = "up" and press then
-        ' print "OnKey #####"
+    else if key = "right" and press then
+        '  print "OnKey #####"
+         m.global.SearchComponent.callFunc("setFocusSearch")
     end if
 
     return true  
