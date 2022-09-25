@@ -2,14 +2,18 @@ sub init()
     m.top.backgroundURI = ""
     m.top.backgroundColor = "#0b0b0b"
     m.userComunication = m.top.findNode("userComunication")
+    m.SearchBar = m.top.findNode("SearchBar")   
     m.leftSideScreen = m.top.findNode("leftSideScreen")   
     m.rightSideScreen = m.top.findNode("rightSideScreen")
     m.videoComponent = m.top.findNode("videoComponent")
+    m.keybordComponent = m.top.findNode("KeybordComponent")
     m.rightSideScreen.observeField("content", "getVideoContent")
     m.global.addFields({
         "LeftSideScreen": m.leftSideScreen,
         "RightSideScreen": m.rightSideScreen,
-        "VideoComponent": m.videoComponent
+        "VideoComponent": m.videoComponent,
+        "SearchComponent": m.SearchBar
+        "KeybordComponent": m.keybordComponent
     })
     checkUserStatus()
     getScreenContent()
@@ -35,7 +39,7 @@ end sub
 
 function showMovieDetails(content = invalid)
     m.rightSideScreen.content = content
-    m.leftSideScreen.getChild(1).SetFocus(true)
+    m.leftSideScreen.findNode("markupGridContent").SetFocus(true)
 end function
 
 function videoPlay()
@@ -43,7 +47,7 @@ function videoPlay()
         m.leftSideScreen.visible = true
         m.videoComponent.visible = false
         m.rightSideScreen.visible = true
-        m.leftSideScreen.getChild(1).SetFocus(true)
+        m.leftSideScreen.findNode("markupGridContent").SetFocus(true)
     else
         m.leftSideScreen.visible = false
         m.videoComponent.visible = true
@@ -77,7 +81,7 @@ sub userRegistry(response)
     if reg = "true" then
         m.leftSideScreen.visible = true
         m.rightSideScreen.visible = true
-        m.leftSideScreen.getChild(1).setFocus(true)
+        m.leftSideScreen.findNode("markupGridContent").setFocus(true)
     else
         m.userComunication = m.top.createChild("UserInteraction")
         m.userComunication.setFocus(true)
