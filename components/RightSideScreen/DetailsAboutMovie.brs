@@ -45,30 +45,32 @@ end function
 
 sub receiveContent(event)
     node = event.getData()
-    m.descriptionId.text = node.Description
-    m.title.text = node.Title
-    m.genreAdventure.text = node.Categories[0]
-    m.genreDramas.text = node.Categories[1]
-    m.genreAction.text = node.Categories[2]
-    m.actorsId.text = node.Actors[0] + ", " + node.Actors[1] + ", " + node.Actors[2]
-    m.directorId.text = node.Directors
-    m.downLeftText.text = node.Description
-    m.directorsName.text = node.Directors
-    m.yearLabel.text = node.ReleaseDate
-    m.parentsWarned.text = node.parentalRating
-    m.durationLabel.text = setVideoDuration(node.Length)
-    for a = 0 to node.Categories.count() - 1
-        if a = 0 then
-            m.genresAv.text = node.Categories[a]
-        else
-            m.genresAv.text += ", " + node.Categories[a]
-        end if        
-    end for
-    for i = 0 to node.Actors.count() - 1
-        if i = 0 then
-            m.actorsName.text = "         " + node.Actors[i]
-        else  
-            m.actorsName.text += ", " + node.Actors[i]
-        end if
-    end for
+    if node <> invalid then
+        m.descriptionId.text = node.Description
+        m.title.text = node.Title
+        m.genreAdventure.text = node.Categories[0]
+        m.genreDramas.text = node.Categories[1]
+        m.genreAction.text = node.Categories[2]
+        m.actorsId.text = node.Actors[0] + ", " + node.Actors[1] + ", " + node.Actors[2]
+        m.directorId.text = node.Directors
+        m.downLeftText.text = node.Description
+        m.directorsName.text = node.Directors
+        m.yearLabel.text = node.ReleaseDate
+        m.parentsWarned.text = node.parentalRating
+        m.durationLabel.text = setVideoDuration(node.Length)
+        for a = 0 to node.Categories.count() - 1
+            if a = 0 then
+                m.genresAv.text = node.Categories[a]
+            else
+                m.genresAv.text += ", " + node.Categories[a]
+            end if        
+        end for
+        for i = 0 to node.Actors.count() - 1
+            if i = 0 then
+                m.actorsName.text = "         " + node.Actors[i]
+            else  
+                m.actorsName.text += ", " + node.Actors[i]
+            end if
+        end for
+    end if
 end sub

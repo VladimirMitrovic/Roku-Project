@@ -7,5 +7,6 @@
     <children>
         <Poster id="backgroundPoster" opacity="0.25" />
         <MarkupGrid id="markupGridContent" itemComponentName="ItemForGrid" translation="[50, 140]" />
+        <Label id="noContentMsg" text="No Content Available" visible="false" translation="[50, 140]" />
     </children>
 </component>

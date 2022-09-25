@@ -81,6 +81,7 @@ sub userRegistry(response)
     if reg = "true" then
         m.leftSideScreen.visible = true
         m.rightSideScreen.visible = true
+        m.SearchBar.visible = true
         m.leftSideScreen.findNode("markupGridContent").setFocus(true)
     else
         m.userComunication = m.top.createChild("UserInteraction")
